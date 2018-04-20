@@ -10,7 +10,9 @@ const database = require('./database');
 
 const app = module.exports = new Koa();
 
-app.use(logger());
+if (process.env.NODE_ENV !== 'test') {
+  app.use(logger());
+}
 
 app.use(cors({ credentials: true }));
 app.use(bodyParser());
