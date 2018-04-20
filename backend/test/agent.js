@@ -2,7 +2,7 @@ const methods = require('methods');
 const TestAgent = require('supertest').agent;
 const app = require('../src/app');
 
-function Agent(application) {
+function Agent (application) {
   TestAgent.call(this, application);
   this.token = null;
 }
